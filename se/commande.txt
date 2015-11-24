@@ -1,0 +1,2 @@
+javac -cp se/cp/gstreamer-java-1.6.jar:se/cp/jna-4.2.1.jar:jna-platform-4.2.1.jar  se/ltu/m7017e/lab2/*.java
+java -cp .:se/cp/gstreamer-java-1.6.jar:se/cp/jna-4.2.1.jar:jna-platform-4.2.1.jar  se.ltu.m7017e.lab2.AudioConferencer
