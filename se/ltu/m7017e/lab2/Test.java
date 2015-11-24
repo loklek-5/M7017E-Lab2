@@ -21,7 +21,7 @@ class Test {
                         recvPort);
 		
 		
-		String pipeline = String.format("%s", toHost)+tring.format("%s", fromHost);
+		String pipeline = String.format("%s", toHost)+String.format("%s", fromHost);
 
 		// And so, we finally create the pipeline.
 		mypipeline = Pipeline.launch(pipeline);
