@@ -10,7 +10,7 @@ class Test {
 		
 		Gst.init("Hosting", args);
 		Pipeline mypipeline;
-		String address="130.240.156.162";
+		String address="127.0.0.1";
 		int sendPort=1234;
 		int recvPort=6789;
 
