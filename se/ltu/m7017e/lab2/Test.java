@@ -10,9 +10,9 @@ class Test {
 		
 		Gst.init("Hosting", args);
 		Pipeline mypipeline;
-		String address="to be Changed";
-		int sendPort=6666;
-		int recvPort=7777;
+		String address="130.240.156.162";
+		int sendPort=1234;
+		int recvPort=6789;
 
 		String toHost = String.format(
 				" autoaudiosrc ! queue ! mulawenc ! rtppcmupay ! udpsink host=%s port=%d sync=false async=false",
