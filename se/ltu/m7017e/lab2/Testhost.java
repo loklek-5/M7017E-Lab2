@@ -38,7 +38,7 @@ class Testhost {
 		//  audioFromGuest1,audioToHost,audioFromHost,audioToGuest1);
 
 				String pipeline = String.format("%s %s %s %s",
-		 audioFromGuest1,audioToHost,audioFromHost,audioToGuest1);
+		 audioFromGuest1,audioToHost);
 
 		// And so, we finally create the pipeline.
 		hostPipeline = Pipeline.launch(pipeline);
