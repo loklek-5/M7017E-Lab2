@@ -1,0 +1,10 @@
+
+
+gst-launch-1.0 udpsrc port=8888 caps="application/x-rtp" ! queue ! udpsink host=224.1.1.2  auto-multicast=true port=3000
+ gst-launch-0.10 udpsrc multicast-group=224.1.1.2 auto-multicast=true port=3000 caps=\"application/x-rtp\" ! queue ! rtppcmudepay ! mulawdec ! audioconvert ! autoaudiosink
+gst-launch-0.10 autoaudiosrc ! queue ! mulawenc ! rtppcmupay ! udpsink host=127.0.0.1 port=8888 sync=false async=false 
+
+gst-launch-0.10 autoaudiosrc ! queue ! mulawenc ! rtppcmupay ! udpsink host=127.0.0.1 port=8888
+gst-launch-0.10 udpsrc port=8888 caps=\"application/x-rtp\" ! queue ! udpsink host=224.1.1.1 auto-multicast=true port=3000
+gst-launch-0.10 udpsrc multicast-group=224.1.1.1 auto-multicast=true port=3000 caps=\"application/x-rtp\" ! queue ! rtppcmudepay ! mulawdec ! audioconvert ! autoaudiosink
+
