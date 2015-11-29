@@ -1,0 +1,7 @@
+Compile:
+javac -cp libs/gstreamer-java-1.6.jar:libs/jna-4.2.1.jar:jna-platform-4.2.1.jar  lab2/*.java
+
+Run:
+java -cp .:libs/gstreamer-java-1.6.jar:libs/jna-4.2.1.jar:jna-platform-4.2.1.jar lab2/Controller
+
+
