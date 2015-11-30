@@ -8,10 +8,11 @@ import org.gstreamer.State;
  * This class is our model for the client
  * according to MVC design pattern
  */
-private Pipeline clientPipeline;
 
 class Client {
  
+    private Pipeline clientPipeline;
+
     /**
      * The constructor initializes Gstreamer and instantiates an empty pipeline.
      */
