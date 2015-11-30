@@ -59,31 +59,33 @@ class Server {
 		String micAudio = String.format(
 		 		"autoaudiosrc ! %s ! tee name=micaudio ! queue !", caps);
 
-		// Still to be commented 
+		// take the audio source from the adder(server's audio + client2's audio) -> encode ->  payload ->  queue -> send it to client 1 
 		String audioToClient1 = String.format(
 	 		"liveadder name=toclient1 ! mulawenc ! rtppcmupay ! queue ! "
 		  				+ "udpsink host=%s port=%d async=false sync=false",
 		  		client1Addr, sendPortForClient1);
 
-		// Still to be commented 
+		// add the server's audio to the client1's audio -> encode ->  payload ->  queue -> send it to client 2 
 		String audioToClient2 = String
 				.format("micaudio. ! queue ! liveadder name=toclient2 ! mulawenc ! "
 						+ "rtppcmupay ! queue ! udpsink host=%s port=%d async=false sync=false",
 						client2Addr, sendPortForClient2);
 		
-		// Still to be commented 
+		// we get client1 audio from udp -> queue -> payunload the rtp packets -> decode -> split into queues -> audio conversion 
+		// -> add it to other audios  
 		String audioFromClient1 = String
 				.format("udpsrc port=%d caps=\"application/x-rtp\" ! queue ! rtppcmudepay ! mulawdec ! "
 						+ "capsfilter ! %s ! tee name=fromguest1 ! queue ! audioconvert ! liveadder name=tohost",
 						recvPortForClient1, caps);
 		
-		// Still to be commented 
+		// we get client2 audio from udp -> queue -> payunload the rtp packets -> decode -> split into queues -> audio conversion 
+		// -> add it to other audios   
 		String audioFromClient2 = String
 				.format("udpsrc port=%d caps=\"application/x-rtp\" ! queue ! rtppcmudepay ! mulawdec ! "
 					+ "capsfilter ! %s ! tee name=fromguest2 ! queue ! audioconvert ! tohost.",
 					recvPortForClient2, caps);
 
-		// Still to be commented 
+		// audio to server sink
 		String audioToHost = "! queue ! autoaudiosink";
 		
 		// We crossmix all the inputs in order to play it in only 1 playbin

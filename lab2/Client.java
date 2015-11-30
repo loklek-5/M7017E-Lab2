@@ -34,12 +34,12 @@ class Client {
      */
     void startClient(int receivPort, String serverAddress, int sendPort) {
 
-    //Still to be commented
+    //client audio source -> queue -> encode -> payload -> send on server's udp address 
     String audioToServer = String
             .format(" autoaudiosrc ! queue ! mulawenc ! rtppcmupay ! udpsink host=%s port=%d sync=false async=false",
                     serverAddress, sendPort);
 
-    // From the UDP source we take the input as RTP, enqueue it ... STILL TO BE COMMENTED
+    // From the UDP source we take the input as RTP-> queue -> payunload -> decode -> convert the audio -> to client audio sink  
     String audioFromServer = String
             .format(" udpsrc port=%d caps=\"application/x-rtp\" ! queue ! rtppcmudepay ! mulawdec ! audioconvert ! autoaudiosink",
                     receivPort);
