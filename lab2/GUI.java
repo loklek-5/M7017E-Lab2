@@ -3,6 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+/**
+ * This class is our View
+ * according to MVC design pattern
+ */
+
 package lab2;
 
 import java.awt.*;
@@ -316,6 +322,13 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField6ActionPerformed
 
+    /**
+     * Disable/Enables necessary buttons and stop the server
+     *
+     * @param evt
+     *            TThis is the event where the button is clicked
+     *
+     */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         jButton3.setEnabled(true);
@@ -330,6 +343,13 @@ public class GUI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    /**
+     * Disable/Enables necessary buttons and start the server
+     *
+     * @param evt
+     *            TThis is the event where the button is clicked
+     *
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         jButton3.setEnabled(false);
@@ -365,6 +385,13 @@ public class GUI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    /**
+     * Disable/Enables necessary buttons and start the client
+     *
+     * @param evt
+     *            TThis is the event where the button is clicked
+     *
+     */
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         jButton1.setEnabled(false);
@@ -390,6 +417,13 @@ public class GUI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    /**
+     * Disable/Enables necessary buttons and stop the client
+     *
+     * @param evt
+     *            TThis is the event where the button is clicked
+     *
+     */
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         jButton1.setEnabled(true);
