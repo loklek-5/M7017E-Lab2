@@ -72,8 +72,7 @@ class Controller {
 	}
 
 	/**
-	 * This function instantiates the server in order to have a conversation
-	 * with 2 more people, that is a total of 3 with the hist himself
+	 * This function instantiates the client 
 	 * 
 	 * @param receivPort	 
 	 *            Port from which the client receives from the server
